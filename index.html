@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Miles Apart, Close at Heart ❤️ | A Surprise For You</title>
+  <meta name="description" content="A simple, romantic long-distance memory journey for my favorite person.">
+  
+  <!-- Google Fonts: Romantic & Elegant Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Ambient Particle & Starry Sky Canvas -->
+  <canvas id="particle-canvas"></canvas>
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+
+  <!-- Background Music Player -->
+  <!-- 
+    ===================================================================
+    CUSTOMIZATION: BACKGROUND MUSIC TRACK
+    ===================================================================
+  -->
+  <audio id="bg-music" loop src="music/INSTRUMENTAL-CKay-Love-Nwantiti-Ah-Ah-Ah-Prod.-KG-Beatz-via-instrumentals.com_.ng_.mp3" preload="auto"></audio>
+  <button id="music-toggle" class="floating-music-btn" aria-label="Toggle Romantic Music">
+    <span class="music-icon">🎵</span>
+    <span class="music-text">Music OFF</span>
+  </button>
+
+  <!-- Desktop Heart Cursor Trail Container -->
+  <div id="cursor-trail-container"></div>
+
+  <!-- Loading Preloader -->
+  <div id="loading-screen" class="preloader-overlay">
+    <div class="preloader-content">
+      <div class="beating-heart">✈️❤️</div>
+      <p class="loading-text">Sending love across the miles...</p>
+    </div>
+  </div>
+
+  <!-- ===================================================================
+       1. INTRO / LANDING SCREEN
+       =================================================================== -->
+  <section id="intro-screen" class="screen-section active-screen">
+    <div class="glass-card intro-card">
+      <div class="heart-pulse-ring">
+        <span class="main-heart-icon">✈️💌</span>
+      </div>
+      
+      <!-- CUSTOMIZE: Intro Typing Text -->
+      <h1 class="typing-title" id="typing-heading">
+        <span class="type-text"></span><span class="cursor-blink">|</span>
+      </h1>
+      
+      <p class="intro-subtitle">A simple little gift from me to you, across every mile ✨</p>
+      
+      <div class="btn-wrapper">
+        <button id="start-btn" class="glow-btn">
+          <span>Open My Heart 💌</span>
+          <div class="btn-sparkles"></div>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Container (Revealed after clicking "Open My Heart") -->
+  <div id="main-content" class="main-content-hidden">
+
+    <!-- ===================================================================
+         2. DISTANCE CONNECTION / WELCOME SECTION
+         =================================================================== -->
+    <section id="welcome-section" class="content-section">
+      <div class="container text-center">
+        <div class="quote-box glass-card fade-in-up">
+          <span class="distance-tag">Miles Apart • United In Heart</span>
+          <p class="quote-line-1">"Distance means so little..."</p>
+          <h2 class="quote-line-2">"...when someone means so much ❤️"</h2>
+          
+          <div class="ldr-badge-box">
+            <span class="city-name">You 📍</span>
+            <span class="airplane-flight">✈️ 💕 ✈️</span>
+            <span class="city-name">Me 📍</span>
+          </div>
+
+          <p class="quote-sub">No matter how far we are, we are looking at the exact same moon and stars tonight.</p>
+
+          <button id="virtual-hug-btn" class="glow-btn-secondary hug-btn">
+            Send a Virtual Hug 🫂❤️
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         3. OUR LONG DISTANCE MEMORIES
+         =================================================================== -->
+    <section id="timeline-section" class="content-section">
+      <div class="container">
+        <div class="section-header text-center reveal-on-scroll">
+          <span class="section-badge">Our Journey</span>
+          <h2 class="section-title">Moments Across The Distance 📱✨</h2>
+          <p class="section-subtitle">Every call, every text, and every countdown we've shared</p>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-line"></div>
+
+          <!-- MEMORY 1 -->
+          <div class="timeline-item left reveal-on-scroll">
+            <div class="timeline-dot">✈️</div>
+            <div class="timeline-card glass-card">
+              <div class="card-image-wrapper">
+                <img src="images/memory1.jpg.jpeg" alt="Where Our Story Started" class="timeline-img" onerror="this.src='images/memory1.jpg'">
+              </div>
+              <div class="card-content">
+                <h3 class="card-title">Where Our Story Started ❤️</h3>
+                <p class="card-desc">The moment we connected. The miles didn't matter even from day one—I felt closer to you than anyone else.</p>
+                <div class="card-footer">
+                  <button class="like-heart-btn" aria-label="Love this memory">
+                    <span class="heart-icon">❤️</span> <span class="like-count">143</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- MEMORY 2 -->
+          <div class="timeline-item right reveal-on-scroll">
+            <div class="timeline-dot">📱</div>
+            <div class="timeline-card glass-card">
+              <div class="card-image-wrapper">
+                <img src="images/memory2.jpg.jpeg" alt="Late Night Video Calls" class="timeline-img" onerror="this.src='images/memory2.jpg'">
+              </div>
+              <div class="card-content">
+                <h3 class="card-title">Our Late Night Video Calls 💬</h3>
+                <p class="card-desc">Falling asleep with the screen on, hearing your breathe and laughing until 2 AM. My favorite part of every single day.</p>
+                <div class="card-footer">
+                  <button class="like-heart-btn" aria-label="Love this memory">
+                    <span class="heart-icon">❤️</span> <span class="like-count">365</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- MEMORY 3 -->
+          <div class="timeline-item left reveal-on-scroll">
+            <div class="timeline-dot">🍿</div>
+            <div class="timeline-card glass-card">
+              <div class="card-image-wrapper">
+                <img src="images/memory3.jpg.jpeg" alt="Virtual Movie Dates" class="timeline-img" onerror="this.src='images/memory3.jpg'">
+              </div>
+              <div class="card-content">
+                <h3 class="card-title">Virtual Movie Dates 🎬</h3>
+                <p class="card-desc">Pressing '3, 2, 1 play!' together at the exact same second. Distance could never stop us from sharing cozy movie nights.</p>
+                <div class="card-footer">
+                  <button class="like-heart-btn" aria-label="Love this memory">
+                    <span class="heart-icon">❤️</span> <span class="like-count">520</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- MEMORY 4 -->
+          <div class="timeline-item right reveal-on-scroll">
+            <div class="timeline-dot">🫂</div>
+            <div class="timeline-card glass-card">
+              <div class="card-image-wrapper">
+                <img src="images/memory4.jpg.jpeg" alt="Counting Down To You" class="timeline-img" onerror="this.src='images/memory4.jpg'">
+              </div>
+              <div class="card-content">
+                <h3 class="card-title">Counting Down To You ⏳❤️</h3>
+                <p class="card-desc">Every single day brings us one day closer to the moment I can hold you tight and never let go.</p>
+                <div class="card-footer">
+                  <button class="like-heart-btn" aria-label="Love this memory">
+                    <span class="heart-icon">❤️</span> <span class="like-count">999</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         4. PHOTO GALLERY
+         =================================================================== -->
+    <section id="gallery-section" class="content-section">
+      <div class="container">
+        <div class="section-header text-center reveal-on-scroll">
+          <span class="section-badge">Moments To Treasure</span>
+          <h2 class="section-title">Our Favorite Photos 📸</h2>
+          <p class="section-subtitle">Click to expand into full screen view</p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-card glass-card reveal-on-scroll" data-src="images/photo1.jpg.jpeg" data-caption="Your sweet smile ❤️">
+            <img src="images/photo1.jpg.jpeg" alt="Photo 1" class="gallery-thumb" onerror="this.src='images/photo1.jpg'">
+            <div class="gallery-overlay"><span class="gallery-icon">🔍</span></div>
+          </div>
+
+          <div class="gallery-card glass-card reveal-on-scroll" data-src="images/photo2.jpg.jpeg" data-caption="Together in spirit 🌿">
+            <img src="images/photo2.jpg.jpeg" alt="Photo 2" class="gallery-thumb" onerror="this.src='images/photo2.jpg'">
+            <div class="gallery-overlay"><span class="gallery-icon">🔍</span></div>
+          </div>
+
+          <div class="gallery-card glass-card reveal-on-scroll" data-src="images/photo3.jpg.jpeg" data-caption="Sunset memories 🌅">
+            <img src="images/photo3.jpg.jpeg" alt="Photo 3" class="gallery-thumb" onerror="this.src='images/photo3.jpg'">
+            <div class="gallery-overlay"><span class="gallery-icon">🔍</span></div>
+          </div>
+
+          <div class="gallery-card glass-card reveal-on-scroll" data-src="images/photo4.jpg.jpeg" data-caption="Counting down days 🌹">
+            <img src="images/photo4.jpg.jpeg" alt="Photo 4" class="gallery-thumb" onerror="this.src='images/photo4.jpg'">
+            <div class="gallery-overlay"><span class="gallery-icon">🔍</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Lightbox Modal -->
+    <div id="lightbox-modal" class="lightbox-modal">
+      <span class="lightbox-close">&times;</span>
+      <button class="lightbox-nav lightbox-prev" id="lightbox-prev">&#10094;</button>
+      <div class="lightbox-content">
+        <img id="lightbox-img" src="" alt="Expanded View">
+        <p id="lightbox-caption" class="lightbox-caption-text"></p>
+      </div>
+      <button class="lightbox-nav lightbox-next" id="lightbox-next">&#10095;</button>
+    </div>
+
+    <!-- ===================================================================
+         5. REASONS I LOVE YOU (DISTANCE EDITION)
+         =================================================================== -->
+    <section id="reasons-section" class="content-section">
+      <div class="container">
+        <div class="section-header text-center reveal-on-scroll">
+          <span class="section-badge">From My Heart</span>
+          <h2 class="section-title">Why You Mean The World To Me 💖</h2>
+        </div>
+
+        <div class="reasons-grid">
+          <div class="reason-card glass-card reveal-on-scroll">
+            <div class="reason-icon">🎧</div>
+            <h3 class="reason-title">Your Voice</h3>
+            <p class="reason-text">Hearing your voice over the phone can instantly fix my worst day and bring peace to my heart.</p>
+          </div>
+
+          <div class="reason-card glass-card reveal-on-scroll">
+            <div class="reason-icon">✨</div>
+            <h3 class="reason-title">How Close You Make Me Feel</h3>
+            <p class="reason-text">Even with miles between us, your love feels warmer and closer than anything else in the world.</p>
+          </div>
+
+          <div class="reason-card glass-card reveal-on-scroll">
+            <div class="reason-icon">🌙</div>
+            <h3 class="reason-title">Late Night Conversations</h3>
+            <p class="reason-text">Talking about our dreams, laughing, and sharing secrets until late at night.</p>
+          </div>
+
+          <div class="reason-card glass-card reveal-on-scroll">
+            <div class="reason-icon">🫂</div>
+            <h3 class="reason-title">One Day With No Goodbyes</h3>
+            <p class="reason-text">Knowing that one day we'll never have to say goodbye through a screen ever again.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         6. LONG DISTANCE LOVE LETTER
+         =================================================================== -->
+    <section id="letter-section" class="content-section">
+      <div class="container text-center">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-badge">Private & Sent With Love</span>
+          <h2 class="section-title">A Letter For My Girl 💌</h2>
+          <p class="section-subtitle" id="envelope-teaser-text">Click the envelope seal to open your letter...</p>
+        </div>
+
+        <div class="envelope-wrapper reveal-on-scroll">
+          <div class="envelope" id="interactive-envelope">
+            <div class="envelope-flap"></div>
+            <div class="envelope-front"></div>
+            
+            <div class="wax-seal" id="wax-seal-btn" title="Click to open!">
+              <span class="seal-heart">💌</span>
+              <span class="seal-text">OPEN</span>
+            </div>
+
+            <div class="letter-paper" id="letter-paper">
+              <div class="letter-content">
+                <div class="letter-header">
+                  <span class="letter-stamp">✈️❤️</span>
+                  <p class="letter-date">Across The Miles</p>
+                </div>
+
+                <!-- Typewriter Letter Content -->
+                <div id="letter-typewriter-text" class="typewriter-body"></div>
+
+                <div class="letter-signature">
+                  <p class="sig-line">Always & Forever,</p>
+                  <p class="sig-name">Your Favorite Person ❤️</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         7. FINAL SURPRISE & FOREVER PROMISE
+         =================================================================== -->
+    <section id="surprise-section" class="content-section final-surprise-bg">
+      <div class="container text-center">
+        <div class="surprise-container glass-card reveal-on-scroll" id="surprise-card">
+          
+          <div class="surprise-stage stage-1 active-stage" id="stage-1">
+            <div class="glowing-sparkle">✈️✨</div>
+            <h2 class="surprise-heading">"No matter how many miles lie between us..."</h2>
+            <button class="glow-btn surprise-next-btn" id="to-stage-2">Next ❤️</button>
+          </div>
+
+          <div class="surprise-stage stage-2" id="stage-2">
+            <div class="glowing-sparkle">💖</div>
+            <h2 class="surprise-heading">"You will always be my favorite person, my best friend, and my home. ❤️"</h2>
+            <button class="glow-btn surprise-next-btn" id="to-stage-3">One Promise 💍</button>
+          </div>
+
+          <div class="surprise-stage stage-3" id="stage-3">
+            <div class="ring-icon-animation">💍✨</div>
+            <h2 class="proposal-heading">"Will you keep waiting for our next big hug with me? 💍❤️"</h2>
+            
+            <div class="proposal-buttons">
+              <button id="yes-btn" class="btn-proposal btn-yes">
+                YES, ALWAYS ❤️
+              </button>
+              <button id="always-btn" class="btn-proposal btn-always">
+                I'M YOURS FOREVER 💖
+              </button>
+            </div>
+          </div>
+
+          <div class="surprise-stage stage-final" id="stage-final">
+            <div class="final-celebration-box">
+              <div class="big-heart-burst">🥰🫂</div>
+              <h2 class="final-title-text">"I Love You Beyond Every Distance! ❤️🥰"</h2>
+              <p class="final-desc-text">Here's to us, our endless phone calls, and the magical day when distance becomes zero!</p>
+              <div class="divider-rose">🌹</div>
+              <p class="final-tagline">Counting down the seconds until I hold you ❤️</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="romantic-footer text-center">
+      <p>Made with all my love, across the miles ❤️</p>
+    </footer>
+
+  </div>
+
+  <!-- Fireworks Canvas -->
+  <canvas id="fireworks-canvas"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
